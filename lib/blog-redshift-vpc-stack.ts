@@ -91,7 +91,7 @@ export class RedshiftVpcStack extends cdk.Stack {
         //get the subnet ID for Glue Connection to use
         const glue_sub = Subnet.fromSubnetAttributes(this, 'glue-sub', {
             subnetId: getSubnetIds(),
-            availabilityZone: 'us-east-1a'
+            availabilityZone: 'ap-southeast-2'
         })
 
         //redshift jdbc url

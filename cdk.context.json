@@ -11,7 +11,7 @@
           {
             "subnetId": "subnet-cd0945ab",
             "cidr": "172.31.0.0/20",
-            "availabilityZone": "us-east-1a",
+            "availabilityZone": "ap-southeast-2",
             "routeTableId": "rtb-06b15677"
           },
           {
@@ -60,7 +60,7 @@
           {
             "subnetId": "subnet-cf606a85",
             "cidr": "172.31.16.0/20",
-            "availabilityZone": "us-east-1a",
+            "availabilityZone": "ap-southeast-2",
             "routeTableId": "rtb-01eaf87e"
           },
           {
