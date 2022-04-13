@@ -18,7 +18,7 @@ export class MyPipelineStack extends cdk.Stack {
                 }
             ),
             installCommands: ["npm install -g aws-cdk@1.152.0"],
-            commands: ["npm ci", "npm run build", "npx cdk synth"]
+            commands: ["npm install", "npm run build", "npx cdk synth"]
         })
     }); 
 
