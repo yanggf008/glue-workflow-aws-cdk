@@ -12,21 +12,21 @@ import { MyPipelineStack } from '../lib/my-pipeline-stack';
 
 const app = new cdk.App();
 
-const workflow_stack = new BlogGlueWorkFlowStack(app, 'workflow-stack', {
-  stackName: 'workflow-stack',
-  description: 'creates the Glue workflow, Crawlers, Jobs and triggers'
-});
+// const workflow_stack = new BlogGlueWorkFlowStack(app, 'workflow-stack', {
+//   stackName: 'workflow-stack',
+//   description: 'creates the Glue workflow, Crawlers, Jobs and triggers'
+// });
 
-const redshift_vpc_stack = new RedshiftVpcStack(app, 'redshift-vpc-stack', {
-  glueRoleGrantSecretRead: workflow_stack.glueRole,
-  stackName: 'redshift-vpc-stack',
-  description: 'creates the VPC, Glue Connection, and Redshift cluster'
-});
+// const redshift_vpc_stack = new RedshiftVpcStack(app, 'redshift-vpc-stack', {
+//   glueRoleGrantSecretRead: workflow_stack.glueRole,
+//   stackName: 'redshift-vpc-stack',
+//   description: 'creates the VPC, Glue Connection, and Redshift cluster'
+// });
 
 const mypipeline_stack = new MyPipelineStack(app, 'mypipeline-stack', {
   env: {
     account: '373041827282',
     region: 'ap-southeast-2',
   }
-})
+});
 

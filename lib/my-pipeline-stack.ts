@@ -1,6 +1,5 @@
 import * as cdk from '@aws-cdk/core';
-import * as codecommit from '@aws-cdk/aws-codecommit';
-import * as codebuild from '@aws-cdk/aws-codebuild';
+import { MyPipelineAppStage } from './my-pipeline-app-stage';
 import { CodePipeline, CodePipelineSource, ShellStep, CodeBuildStep } from '@aws-cdk/pipelines';
 
 export class MyPipelineStack extends cdk.Stack {
@@ -18,10 +17,12 @@ export class MyPipelineStack extends cdk.Stack {
                         "arn:aws:codestar-connections:ap-southeast-2:373041827282:connection/51c36841-8b13-452e-87d6-502625aec113"
                 }
             ),
-            installCommands: ["npm install -g aws-cdk"],
+            installCommands: ["npm install -g aws-cdk@1.152.0"],
             commands: ["npm ci", "npm run build", "npx cdk synth"]
         })
     }); 
+
+    // pipeline.addStage(new MyPipelineAppStage(this, "Deploy"));
       
     }
   }
