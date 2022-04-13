@@ -29,4 +29,5 @@ const mypipeline_stack = new MyPipelineStack(app, 'mypipeline-stack', {
     region: 'ap-southeast-2',
   }
 });
+app.synth();
 
