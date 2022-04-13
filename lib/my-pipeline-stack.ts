@@ -8,7 +8,8 @@ export class MyPipelineStack extends cdk.Stack {
 
       const pipeline = new CodePipeline(this, "BlogPipeline", {
         pipelineName: "BlogPipeline",
-        synth: new CodeBuildStep("SynthStep", {
+        // synth: new CodeBuildStep("SynthStep", {
+        synth: new ShellStep('Synth', {
             input: CodePipelineSource.connection(
                 "yanggf008/glue-workflow-aws-cdk",
                 "main",
@@ -17,8 +18,8 @@ export class MyPipelineStack extends cdk.Stack {
                         "arn:aws:codestar-connections:ap-southeast-2:373041827282:connection/51c36841-8b13-452e-87d6-502625aec113"
                 }
             ),
-            installCommands: ["npm install -g aws-cdk@1.152.0"],
-            commands: ["npm install", "npm run build", "npx cdk synth"]
+            // installCommands: ["npm install -g aws-cdk@1.152.0"],
+            commands: ["npm install -g aws-cdk@1.152.0", "npm install", "npm run build", "npx cdk synth"]
         })
     }); 
 
